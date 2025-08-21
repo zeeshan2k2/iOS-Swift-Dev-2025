@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_9" orientation="portrait" appearance="light"/>
+    <device id="iPad13_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SafariQuizApp_3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1032" height="1376"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lion" translatesAutoresizingMaskIntoConstraints="NO" id="VgO-bv-FdQ">
-                                <rect key="frame" x="0.0" y="124" width="440" height="210"/>
+                                <rect key="frame" x="0.0" y="24" width="1032" height="688"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="210" id="WkL-3Z-1FT"/>
                                 </constraints>
@@ -33,42 +34,90 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enK-Rp-QZL">
-                                <rect key="frame" x="351.33333333333331" y="357" width="63.666666666666686" height="21"/>
+                                <rect key="frame" x="943.5" y="735" width="63.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-Og-4BS">
-                                <rect key="frame" x="25" y="573" width="390" height="50"/>
+                                <rect key="frame" x="696" y="811" width="309.5" height="60"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TfL-aa-ksX"/>
                                     <constraint firstAttribute="height" constant="50" id="xhh-Ny-ug0"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Answer 3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Answer 3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TfL-aa-ksX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <mask key="constraints">
+                                        <include reference="TfL-aa-ksX"/>
+                                        <exclude reference="xhh-Ny-ug0"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="answerButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tVE-q7-NAJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sb-tj-fmk">
-                                <rect key="frame" x="25" y="423" width="390" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="M4d-Wb-RLn"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Answer 1"/>
-                                <connections>
-                                    <action selector="answerButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fH-tg-aLd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wir-fQ-36i">
-                                <rect key="frame" x="25" y="498" width="390" height="50"/>
+                                <rect key="frame" x="361" y="811" width="310" height="60"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="pA9-BH-bF2"/>
+                                    <constraint firstAttribute="height" constant="60" id="xX0-Kj-JV2"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Answer 2"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Answer 2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xX0-Kj-JV2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <mask key="constraints">
+                                        <exclude reference="pA9-BH-bF2"/>
+                                        <include reference="xX0-Kj-JV2"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="answerButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wrr-4i-JLn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sb-tj-fmk">
+                                <rect key="frame" x="26.5" y="811" width="309.5" height="60"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="M4d-Wb-RLn"/>
+                                    <constraint firstAttribute="height" constant="60" id="PKN-RC-R21"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Answer 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="PKN-RC-R21"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <mask key="constraints">
+                                        <exclude reference="M4d-Wb-RLn"/>
+                                        <include reference="PKN-RC-R21"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="answerButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fH-tg-aLd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -76,8 +125,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Wir-fQ-36i" firstAttribute="centerY" secondItem="VgO-bv-FdQ" secondAttribute="centerY" id="39R-Hn-Se4"/>
+                            <constraint firstItem="ALk-Og-4BS" firstAttribute="centerY" secondItem="Wir-fQ-36i" secondAttribute="centerY" id="6nC-AK-FeI"/>
+                            <constraint firstItem="ALk-Og-4BS" firstAttribute="leading" secondItem="Wir-fQ-36i" secondAttribute="trailing" constant="25" id="7Gq-2d-6uH"/>
                             <constraint firstItem="8Sb-tj-fmk" firstAttribute="leading" secondItem="VgO-bv-FdQ" secondAttribute="trailing" constant="15" id="Ewg-jm-gwZ"/>
                             <constraint firstItem="enK-Rp-QZL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="FGL-Lg-UST"/>
+                            <constraint firstItem="Wir-fQ-36i" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="Gq9-I9-7HE"/>
+                            <constraint firstItem="8Sb-tj-fmk" firstAttribute="centerY" secondItem="Wir-fQ-36i" secondAttribute="centerY" id="MZ3-5W-23k"/>
                             <constraint firstItem="VgO-bv-FdQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Nxn-rZ-t7x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VgO-bv-FdQ" secondAttribute="bottom" constant="50" id="PMP-Pj-79H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Sb-tj-fmk" secondAttribute="trailing" constant="25" id="Pb7-59-RFd"/>
@@ -86,12 +139,19 @@
                             <constraint firstItem="Wir-fQ-36i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="TZx-xh-UX2"/>
                             <constraint firstItem="Wir-fQ-36i" firstAttribute="leading" secondItem="VgO-bv-FdQ" secondAttribute="trailing" constant="15" id="W2J-Mb-usS"/>
                             <constraint firstItem="VgO-bv-FdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="abi-60-siL"/>
+                            <constraint firstItem="Wir-fQ-36i" firstAttribute="leading" secondItem="8Sb-tj-fmk" secondAttribute="trailing" constant="25" id="acb-7c-ZKy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VgO-bv-FdQ" secondAttribute="trailing" id="agX-tG-4wF"/>
                             <constraint firstItem="8Sb-tj-fmk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="bG5-Mj-pNx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VgO-bv-FdQ" secondAttribute="trailing" id="cfO-BA-PI9"/>
+                            <constraint firstItem="8Sb-tj-fmk" firstAttribute="width" secondItem="Wir-fQ-36i" secondAttribute="width" id="dJ1-rd-1qb"/>
                             <constraint firstItem="8Sb-tj-fmk" firstAttribute="top" secondItem="enK-Rp-QZL" secondAttribute="bottom" constant="45" id="dps-A6-kbP"/>
                             <constraint firstItem="enK-Rp-QZL" firstAttribute="top" secondItem="VgO-bv-FdQ" secondAttribute="bottom" constant="23" id="fid-e1-u8g"/>
+                            <constraint firstItem="ALk-Og-4BS" firstAttribute="width" secondItem="Wir-fQ-36i" secondAttribute="width" id="gVZ-RA-2WM"/>
                             <constraint firstItem="Wir-fQ-36i" firstAttribute="top" secondItem="8Sb-tj-fmk" secondAttribute="bottom" constant="25" id="ihN-PI-wmT"/>
                             <constraint firstItem="VgO-bv-FdQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="kX0-Ux-427"/>
+                            <constraint firstItem="VgO-bv-FdQ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="nBr-tw-lsO"/>
+                            <constraint firstItem="Wir-fQ-36i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nXs-7e-1mC"/>
+                            <constraint firstItem="Wir-fQ-36i" firstAttribute="top" secondItem="enK-Rp-QZL" secondAttribute="bottom" constant="55" id="qXf-YC-mj1"/>
                             <constraint firstItem="ALk-Og-4BS" firstAttribute="leading" secondItem="VgO-bv-FdQ" secondAttribute="trailing" constant="15" id="sLw-kn-oTa"/>
                             <constraint firstItem="ALk-Og-4BS" firstAttribute="top" secondItem="Wir-fQ-36i" secondAttribute="bottom" constant="25" id="tZP-kT-WUB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wir-fQ-36i" secondAttribute="trailing" constant="25" id="uqx-ie-kj7"/>
@@ -100,22 +160,33 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="agX-tG-4wF"/>
-                                <exclude reference="kX0-Ux-427"/>
+                                <exclude reference="cfO-BA-PI9"/>
                                 <exclude reference="PMP-Pj-79H"/>
+                                <exclude reference="kX0-Ux-427"/>
+                                <exclude reference="nBr-tw-lsO"/>
                                 <exclude reference="Ewg-jm-gwZ"/>
                                 <exclude reference="bG5-Mj-pNx"/>
+                                <exclude reference="MZ3-5W-23k"/>
                                 <exclude reference="dps-A6-kbP"/>
+                                <exclude reference="dJ1-rd-1qb"/>
+                                <exclude reference="nXs-7e-1mC"/>
+                                <exclude reference="Gq9-I9-7HE"/>
                                 <exclude reference="W2J-Mb-usS"/>
+                                <exclude reference="acb-7c-ZKy"/>
                                 <exclude reference="TZx-xh-UX2"/>
                                 <exclude reference="39R-Hn-Se4"/>
+                                <exclude reference="qXf-YC-mj1"/>
                                 <exclude reference="sLw-kn-oTa"/>
+                                <exclude reference="7Gq-2d-6uH"/>
                                 <exclude reference="PeI-0R-R2l"/>
+                                <exclude reference="6nC-AK-FeI"/>
+                                <exclude reference="gVZ-RA-2WM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="kX0-Ux-427"/>
                                 <include reference="PMP-Pj-79H"/>
+                                <include reference="kX0-Ux-427"/>
                                 <include reference="Ewg-jm-gwZ"/>
                                 <include reference="W2J-Mb-usS"/>
                                 <include reference="39R-Hn-Se4"/>
@@ -124,8 +195,8 @@
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="kX0-Ux-427"/>
                                 <include reference="PMP-Pj-79H"/>
+                                <include reference="kX0-Ux-427"/>
                                 <include reference="Ewg-jm-gwZ"/>
                                 <include reference="W2J-Mb-usS"/>
                                 <include reference="39R-Hn-Se4"/>
@@ -141,6 +212,26 @@
                                 <include reference="PeI-0R-R2l"/>
                             </mask>
                         </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="cfO-BA-PI9"/>
+                                <exclude reference="Pb7-59-RFd"/>
+                                <exclude reference="uqx-ie-kj7"/>
+                                <exclude reference="vkN-1Y-Mzm"/>
+                                <include reference="nBr-tw-lsO"/>
+                                <include reference="MZ3-5W-23k"/>
+                                <include reference="dJ1-rd-1qb"/>
+                                <include reference="nXs-7e-1mC"/>
+                                <include reference="Gq9-I9-7HE"/>
+                                <include reference="acb-7c-ZKy"/>
+                                <exclude reference="ihN-PI-wmT"/>
+                                <include reference="qXf-YC-mj1"/>
+                                <include reference="7Gq-2d-6uH"/>
+                                <include reference="6nC-AK-FeI"/>
+                                <exclude reference="tZP-kT-WUB"/>
+                                <include reference="gVZ-RA-2WM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="answer1Btn" destination="8Sb-tj-fmk" id="8CW-rU-o5y"/>
@@ -152,13 +243,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="-34"/>
+            <point key="canvasLocation" x="177.90697674418604" y="-34.011627906976742"/>
         </scene>
     </scenes>
     <resources>
         <image name="lion" width="5671" height="3781"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

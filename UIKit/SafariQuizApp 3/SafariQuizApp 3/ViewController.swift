@@ -21,16 +21,88 @@ class ViewController: UIViewController {
     ]
     var score = 0
     var currentQuestionIndex = 0
+    var sizeClass: (UIUserInterfaceSizeClass, UIUserInterfaceSizeClass) {
+        return (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        style()
         setupQuestion()
     }
     
     @IBAction func answerButtonClicked(_ sender: UIButton) {
         check(answer: sender.tag  )
     }
+    
+    /*MARK: My approach*/
+    func style() {
+        switch sizeClass {
+            // ipad
+        case (.regular, .regular):
+            titleSize(UIElement: scoreLbl, textSize: 30)
+            // iphone landscape and portrait
+        default:
+            titleSize(UIElement: scoreLbl, textSize: 15)
+        }
+        
+        [answer1Btn, answer2Btn, answer3Btn].forEach { button in
+            switch sizeClass {
+                // ipad
+            case (.regular, .regular):
+                titleSize(UIElement: button, textSize: 30)
+                // iphone landscape and portrait
+            default:
+                titleSize(UIElement: button, textSize: 15)
+            }
+            
+            button?.layer.cornerRadius = 6
+        }
+    }
+
+    func titleSize<T>(UIElement: T, textSize: CGFloat){
+        if let titleLabel = UIElement as? UILabel {
+            titleLabel.font = UIFont.systemFont(ofSize: textSize, weight: .regular)
+        } else if let titleBtn = UIElement as? UIButton {
+            titleBtn.titleLabel?.font = UIFont.systemFont(ofSize: textSize, weight: .semibold)
+        }
+    }
+    
+    /*MARK: Course Instructor's approach*/
+//    func style() {
+//        switch sizeClass {
+//            //iphone landscape
+//        case (.compact, .compact), (.regular, .compact):
+//            scoreLbl.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+//            //iphone portrait
+//        case (.compact, .regular):
+//            scoreLbl.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+//            // ipad
+//        case (.regular, .regular):
+//            scoreLbl.font = UIFont.systemFont(ofSize: 30, weight: .regular)
+//        default:
+//            scoreLbl.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+//        }
+//        
+//        [answer1Btn, answer2Btn, answer3Btn].forEach { button in
+//            switch sizeClass {
+//                //iphone landscape
+//            case (.compact, .compact), (.regular, .compact):
+//                button?.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+//                //iphone portrait
+//            case (.compact, .regular):
+//                button?.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+//                // ipad
+//            case (.regular, .regular):
+//                button?.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+//            default:
+//                button?.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+//            }
+//            
+//            button?.layer.cornerRadius = 6
+//        }
+//    }
     
     func check(answer: Int) {
         let currentQuestion = questions[currentQuestionIndex]
