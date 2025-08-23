@@ -27,7 +27,7 @@ class SecondViewController: UIViewController {
     }()
     
     override func loadView() {
-        print("next load view called")
+        print("next load view calledddd")
         let rootView = UIView()
         rootView.backgroundColor = UIColor.white
         rootView.addSubview(previousButton)
