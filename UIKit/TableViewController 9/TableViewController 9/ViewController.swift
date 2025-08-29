@@ -7,7 +7,33 @@
 
 import UIKit
 
+class ShoppingItem {
+    let title: String
+    let subTitle: String
+    var isSelected = false
+    
+    init(title: String, subTitle: String, isSelected: Bool = false) {
+        self.title = title
+        self.subTitle = subTitle
+        self.isSelected = isSelected
+    }
+}
+
 class ViewController: UITableViewController {
+    
+    var shoppingItems: [ShoppingItem] = [
+        ShoppingItem(title: "Eggs", subTitle: "Buy 6 eggs"),
+        ShoppingItem(title: "Apples", subTitle: "Red apples only"),
+        ShoppingItem(title: "Bananas", subTitle: "Buy as many as you can")
+    ]
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShoppingItemDetailSegue" {
+            let destinationVC = segue.destination as! ShoppingDetailViewController
+            let shoppingItem = sender as! ShoppingItem
+            destinationVC.shoppingItem = shoppingItem
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,38 +52,36 @@ class ViewController: UITableViewController {
         //        if section == 0 {
         //            return 1
         //        }
-        return 5
+        return shoppingItems.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingSubtitleCell", for: indexPath)
+        let shoppingItem = shoppingItems[indexPath.row]
         
         if #available(iOS 14, *) {
             var content = cell.defaultContentConfiguration()
-            content.text = "Shopping Subtitle Item"
-            content.secondaryText = "Shopping Subtitle  Description"
-            content.image = UIImage(systemName: "star.fill")
+            content.text = shoppingItem.title
+            content.secondaryText = shoppingItem.subTitle
+            content.image = shoppingItem.isSelected ? UIImage(systemName: "star.fill")! : UIImage(systemName: "star")!
             cell.contentConfiguration = content
         } else {
-            cell.textLabel?.text = "Shopping Subtitle Item"
-            cell.detailTextLabel?.text = "Shopping Subtitle  Description"
-            cell.imageView?.image = UIImage(systemName: "star.fill")
+            cell.textLabel?.text = shoppingItem.title
+            cell.detailTextLabel?.text = shoppingItem.subTitle
+            cell.imageView?.image = shoppingItem.isSelected ? UIImage(systemName: "star.fill")! : UIImage(systemName: "star")
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("did tap row")
+//        var shoppingItem = shoppingItems[indexPath.row]
+//        shoppingItem.isSelected = !shoppingItem.isSelected
+//        tableView.reloadData()
         
-        //        if indexPath.row % 2 == 0 {
-        //            let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingBasicCell", for: indexPath)
-        //            cell.textLabel?.text = "Shopping Basic Item"
-        //            cell.detailTextLabel?.text = "Shopping Basic  Description"
-        //            cell.imageView?.image = UIImage(systemName: "star")
-        //            return cell
-        //        }
-        //        // improves performance and best practice
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingSubtitleCell", for: indexPath)
-        //        cell.textLabel?.text = "Shopping Subtitle Item"
-        //        cell.detailTextLabel?.text = "Shopping Subtitle  Description"
-        //        cell.imageView?.image = UIImage(systemName: "star.fill")
-        //        return cell
+        var shoppingItem = shoppingItems[indexPath.row]
+        performSegue(withIdentifier: "ShoppingItemDetailSegue", sender: shoppingItem)
+        
     }
 }

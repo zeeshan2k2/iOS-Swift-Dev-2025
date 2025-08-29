@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="chV-WT-STj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dkR-gh-5Qg">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,10 +65,65 @@
                             <outlet property="delegate" destination="chV-WT-STj" id="hxu-nH-Ese"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="8Yf-rn-D0A"/>
+                    <connections>
+                        <segue destination="qp2-SZ-uFx" kind="show" identifier="ShoppingItemDetailSegue" id="Upn-yW-PK9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8F-DN-wHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280" y="32"/>
+            <point key="canvasLocation" x="1205.3435114503816" y="31.690140845070424"/>
+        </scene>
+        <!--Shopping Detail View Controller-->
+        <scene sceneID="ovh-BJ-5gK">
+            <objects>
+                <viewController id="qp2-SZ-uFx" customClass="ShoppingDetailViewController" customModule="TableViewController_9" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8N-d7-2bM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkC-l2-8Yw">
+                                <rect key="frame" x="20" y="415.66666666666669" width="353" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fXQ-b0-BX8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rkC-l2-8Yw" firstAttribute="centerX" secondItem="E8N-d7-2bM" secondAttribute="centerX" id="4k2-aC-RuC"/>
+                            <constraint firstItem="rkC-l2-8Yw" firstAttribute="leading" secondItem="fXQ-b0-BX8" secondAttribute="leading" constant="20" id="DhV-gc-jZh"/>
+                            <constraint firstItem="rkC-l2-8Yw" firstAttribute="centerY" secondItem="E8N-d7-2bM" secondAttribute="centerY" id="rbP-hF-cxX"/>
+                            <constraint firstItem="fXQ-b0-BX8" firstAttribute="trailing" secondItem="rkC-l2-8Yw" secondAttribute="trailing" constant="20" id="zzN-8m-Mx3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ChU-CY-Tym"/>
+                    <connections>
+                        <outlet property="detailLbl" destination="rkC-l2-8Yw" id="qZ7-l4-A1Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxY-hs-oqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2104.5801526717555" y="31.690140845070424"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jc9-KQ-3VM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dkR-gh-5Qg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LZR-sK-fLO">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="chV-WT-STj" kind="relationship" relationship="rootViewController" id="vm5-3y-5pk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWo-Wf-z4q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="278.62595419847327" y="31.690140845070424"/>
         </scene>
     </scenes>
     <resources>
