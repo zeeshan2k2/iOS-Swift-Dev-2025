@@ -76,10 +76,10 @@ class NewTaskModalView: UIView {
     /*
      This is the appropriate place to change the corner radius because it will acocunt for layout changes and changes in the size of views
      */
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        print("Test to see if this is called")
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        print("Test to see if this is called")
+//    }
     
     
     @IBAction func submitBtnClicked(_ sender: Any) {
@@ -90,9 +90,12 @@ class NewTaskModalView: UIView {
         let selectedRow = categoryPickerView.selectedRow(inComponent: 0)
         let category = Category.allCases[selectedRow]
         if let task = task {
-            
+            let task = Task(id: task.id, category: category, caption: caption, createdDate: task.createdDate, isComplete: task.isComplete)
+            let userInfo: [String: Task] = ["updateTask": task]
+            NotificationCenter.default.post(name: NSNotification.Name("com.fullstacktuts.editTask"), object: nil, userInfo: userInfo)
         } else {
-            let task = Task(category: category, caption: caption, createdDate: Date(), isComplete: false)
+            let taskId = UUID().uuidString
+            let task = Task(id: taskId, category: category, caption: caption, createdDate: Date(), isComplete: false)
             let userInfo: [String: Task] = ["newTask": task]
             NotificationCenter.default.post(name: NSNotification.Name("com.fullstacktuts.createTask"), object: nil, userInfo: userInfo)
         }

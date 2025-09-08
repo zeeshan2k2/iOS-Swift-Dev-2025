@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol TaskTableViewCellDelegate: AnyObject {
+    func editTask(id: String)
+    func markTask(id: String, complete: Bool)
+}
+
 class TaskTableViewCell: UITableViewCell {
 
     static let identifier = "TaskTableViewCell"
@@ -17,6 +22,10 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var captionLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var isCompleteImgView: UIImageView!
+    
+    private weak var delegate: TaskTableViewCellDelegate?
+    private var task: Task!
+    
     private var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -31,19 +40,27 @@ class TaskTableViewCell: UITableViewCell {
         
     }
     
-    func configure(withTask task: Task) {
+    func configure(withTask task: Task, delegate: TaskTableViewCellDelegate?) {
         categoryLbl.text = task.category.rawValue
         captionLbl.text = task.caption
-        isCompleteImgView.image = task.isComplete ? UIImage(systemName: "circle.fill") : UIImage(systemName: "circle")
+        isCompleteImgView.image = task.isComplete ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
         dateLbl.text = dateFormatter.string(from: task.createdDate)
         selectionStyle = .none
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toggleCompletiton))
+        isCompleteImgView.addGestureRecognizer(tap)
+        isCompleteImgView.isUserInteractionEnabled = true
+        self.task = task
+        self.delegate = delegate
+    }
+    
+    @objc func toggleCompletiton() {
+        task?.isComplete.toggle()
+        delegate?.markTask(id: task.id, complete: task.isComplete)
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBAction func editTaskBtnClicked(_ sender: Any) {
+        delegate?.editTask(id: task.id)
     }
 
 }
