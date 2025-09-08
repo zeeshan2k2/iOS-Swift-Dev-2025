@@ -9,12 +9,38 @@ import UIKit
 
 class NewTaskModalView: UIView {
 
-    @IBOutlet weak var descriptionTxtView: UITextView!
-    @IBOutlet weak var categoryPickerView: UIPickerView!
-    @IBOutlet weak var submitBtn: UIButton!
+    @IBOutlet private weak var descriptionTxtView: UITextView!
+    @IBOutlet private weak var categoryPickerView: UIPickerView!
+    @IBOutlet private weak var submitBtn: UIButton!
+    @IBOutlet private var contentView: UIView!
+    var delegate: NewTasKDelegate?
+    private var task: Task?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    var caption: String {
+        get { descriptionTxtView.text }
+        set { descriptionTxtView.text = newValue }
+    }
+    
+    init(frame: CGRect, task: Task?) {
+        super.init(frame: frame)
+        self.task = task
+        initSubviews()
+    }
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        initSubviews()
+//    }
+    
+    // responsible for the initialization of the visual objects
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        initSubviews()
+    }
+    
+    func initSubviews() {
+        let nib = UINib(nibName: "NewTaskModalView", bundle: nil)
+        nib.instantiate(withOwner: self)
         
         descriptionTxtView.delegate = self
         categoryPickerView.dataSource = self
@@ -23,19 +49,59 @@ class NewTaskModalView: UIView {
         descriptionTxtView.layer.borderWidth = 0.5
         descriptionTxtView.layer.borderColor = UIColor.lightGray.cgColor
         descriptionTxtView.layer.cornerRadius = 8
-        descriptionTxtView.text = "Add caption..."
-        descriptionTxtView.textColor = .lightGray
         
         categoryPickerView.selectRow(1, inComponent: 0, animated: false)
         
-        layer.cornerRadius = 5
+        if let task = task {
+            descriptionTxtView.text = task.caption
+            descriptionTxtView.textColor = .black
+            if let rowIndex = Category.allCases.firstIndex(of: task.category) {
+                categoryPickerView.selectRow(rowIndex, inComponent: 0, animated: false)
+            }
+        } else {
+            descriptionTxtView.text = "Add caption..."
+            descriptionTxtView.textColor = .lightGray
+            categoryPickerView.selectRow(1, inComponent: 0, animated: false)
+        }
+        
+        contentView.frame = bounds
+        addSubview(contentView)
+    }
+    
+    override func layoutSubviews() {
+        contentView.layer.cornerRadius = 5
+        
+    }
+    
+    /*
+     This is the appropriate place to change the corner radius because it will acocunt for layout changes and changes in the size of views
+     */
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("Test to see if this is called")
     }
     
     
     @IBAction func submitBtnClicked(_ sender: Any) {
+        guard let caption = descriptionTxtView.text,
+            caption.count >= 4 else {
+            return
+        }
+        let selectedRow = categoryPickerView.selectedRow(inComponent: 0)
+        let category = Category.allCases[selectedRow]
+        if let task = task {
+            
+        } else {
+            let task = Task(category: category, caption: caption, createdDate: Date(), isComplete: false)
+            let userInfo: [String: Task] = ["newTask": task]
+            NotificationCenter.default.post(name: NSNotification.Name("com.fullstacktuts.createTask"), object: nil, userInfo: userInfo)
+        }
+        
+        delegate?.closeView()
     }
     
     @IBAction func closeBtnClicked(_ sender: Any) {
+        delegate?.closeView()
     }
     
 }

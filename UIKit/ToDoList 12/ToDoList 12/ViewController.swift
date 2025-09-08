@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    var tasks: [Task] = []
+    
     lazy var addButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .link
@@ -30,10 +32,24 @@ class ViewController: UIViewController {
         titleView.layer.cornerRadius = 24
         titleView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
+        tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         
         view.addSubview(addButton)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(createTask(_:)), name: NSNotification.Name("com.fullstacktuts.createTask"), object: nil)
+    }
+    
+    @objc func createTask(_ notificaiton: Notification) {
+        guard let userInfo = notificaiton.userInfo,
+              let task = userInfo["newTask"] as? Task else {
+            return
+        }
+        tasks.append(task)
+        tableView.reloadData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,11 +73,23 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath)
+        let task = tasks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.identifier, for: indexPath) as! TaskTableViewCell
+        cell.configure(withTask: task)
         return cell
+    }
+}
+
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = tasks[indexPath.row]
+        let newTaskViewController = NewTaskViewController(task: task)
+        present(newTaskViewController, animated: true)
     }
 }

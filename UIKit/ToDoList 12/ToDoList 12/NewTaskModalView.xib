@@ -8,9 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTaskModalView" customModule="ToDoList_12" customModuleProvider="target">
+            <connections>
+                <outlet property="categoryPickerView" destination="Hhf-bU-jRy" id="0bu-Sc-lS5"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="lCR-7h-zZ9"/>
+                <outlet property="descriptionTxtView" destination="9l9-Iy-Oh5" id="7VT-zR-kp9"/>
+                <outlet property="submitBtn" destination="FWo-WD-hc5" id="bR3-u2-R7R"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NewTaskModalView" customModule="ToDoList_12" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="571" height="410"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -30,7 +37,7 @@
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="xmark" catalog="system"/>
                     <connections>
-                        <action selector="closeBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fsp-dq-nYJ"/>
+                        <action selector="closeBtnClicked:" destination="-1" eventType="touchUpInside" id="3Be-XN-7B0"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nc5-lC-Ash">
@@ -73,7 +80,7 @@
                         <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="submitBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="b1Q-D7-P0U"/>
+                        <action selector="submitBtnClicked:" destination="-1" eventType="touchUpInside" id="zeR-OY-TCq"/>
                     </connections>
                 </button>
             </subviews>
@@ -99,20 +106,7 @@
                 <constraint firstItem="nc5-lC-Ash" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="zHH-l2-tTf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="categoryPickerView" destination="Hhf-bU-jRy" id="BNN-uz-YnL"/>
-                <outlet property="descriptionTxtView" destination="9l9-Iy-Oh5" id="ZiO-sF-eNW"/>
-                <outlet property="submitBtn" destination="FWo-WD-hc5" id="IkL-Wh-vQA"/>
-            </connections>
             <point key="canvasLocation" x="145.80152671755724" y="99.295774647887328"/>
-        </view>
-        <view contentMode="scaleToFill" id="TZl-sH-gIA">
-            <rect key="frame" x="0.0" y="0.0" width="542" height="419"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="BhY-84-G4h"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="1213.7404580152672" y="103.16901408450705"/>
         </view>
     </objects>
     <resources>
