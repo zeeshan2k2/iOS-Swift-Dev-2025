@@ -9,9 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var headlineTxtLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Dynamic Font
+        let arialFont = UIFont(name: "Arial", size: UIFont.labelFontSize)!
+        headlineTxtLbl.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: arialFont)
+        headlineTxtLbl.adjustsFontForContentSizeCategory = true
     }
 
 
