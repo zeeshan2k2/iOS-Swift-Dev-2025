@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C16F43AE2F008F05003585D6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16F43AD2F008F05003585D6 /* Colors.xcassets */; };
 		C1878DF22E993A0400355021 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1878DE72E993A0400355021 /* AppDelegate.swift */; };
 		C1878DF32E993A0400355021 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1878DE92E993A0400355021 /* Extension+UIColor.swift */; };
 		C1878DF42E993A0400355021 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1878DEF2E993A0400355021 /* SceneDelegate.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C16F43AD2F008F05003585D6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		C1878DE72E993A0400355021 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1878DE82E993A0400355021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1878DE92E993A0400355021 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -89,13 +91,14 @@
 			isa = PBXGroup;
 			children = (
 				C1878DE72E993A0400355021 /* AppDelegate.swift */,
-				C1878DE82E993A0400355021 /* Assets.xcassets */,
 				C1878DEA2E993A0400355021 /* Info.plist */,
 				C1878DEC2E993A0400355021 /* LaunchScreen.storyboard */,
 				C1878DEE2E993A0400355021 /* Main.storyboard */,
 				C1878DEF2E993A0400355021 /* SceneDelegate.swift */,
 				C1878DF02E993A0400355021 /* ViewController.swift */,
 				C1878DE92E993A0400355021 /* Extension+UIColor.swift */,
+				C1878DE82E993A0400355021 /* Assets.xcassets */,
+				C16F43AD2F008F05003585D6 /* Colors.xcassets */,
 			);
 			path = "Color 17";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1878DF62E993A0400355021 /* Assets.xcassets in Resources */,
+				C16F43AE2F008F05003585D6 /* Colors.xcassets in Resources */,
 				C1878DF82E993A0400355021 /* LaunchScreen.storyboard in Resources */,
 				C1878DF92E993A0400355021 /* Main.storyboard in Resources */,
 			);

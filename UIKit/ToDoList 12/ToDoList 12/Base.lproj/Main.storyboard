@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -47,10 +47,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLT-do-r92">
-                                                    <rect key="frame" x="16" y="21" width="358" height="137"/>
+                                                    <rect key="frame" x="16" y="25" width="358" height="129"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="koN-KE-MMr">
-                                                            <rect key="frame" x="0.0" y="0.0" width="5" height="137"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="5" height="129"/>
                                                             <color key="backgroundColor" systemColor="linkColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="5" id="OlI-fr-kEt"/>
@@ -139,6 +139,7 @@
                                             <outlet property="containerView" destination="oLT-do-r92" id="O43-oh-LIT"/>
                                             <outlet property="dateLbl" destination="6fU-tm-aTh" id="DdX-g4-jur"/>
                                             <outlet property="isCompleteImgView" destination="6gJ-pR-ISh" id="n3s-Li-POk"/>
+                                            <outlet property="stripView" destination="koN-KE-MMr" id="rDe-w4-P03"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -170,7 +171,7 @@
         <image name="circle" catalog="system" width="128" height="123"/>
         <image name="circles.grid.svg" width="46" height="46"/>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

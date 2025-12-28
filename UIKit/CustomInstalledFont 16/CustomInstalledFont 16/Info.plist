@@ -8,6 +8,14 @@
 		<string>Roboto-BlackItalic.ttf</string>
 		<string>Roboto-Bold.ttf</string>
         <string>Roboto-Regular.ttf</string>
+        <string>Gibson-Bold.ttf</string>
+        <string>Gibson-Bold-Italic.ttf</string>
+        <string>Gibson-Italic.ttf</string>
+        <string>Gibson-Light.ttf</string>
+        <string>Gibson-Light-Italic.ttf</string>
+        <string>Gibson-Regular.ttf</string>
+        <string>Gibson-SemiBold.ttf</string>
+        <string>Gibson-SemiBold-Italic.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

@@ -22,6 +22,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var captionLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var isCompleteImgView: UIImageView!
+    @IBOutlet weak var stripView: UIView!
     
     private weak var delegate: TaskTableViewCellDelegate?
     private var task: Task!
@@ -41,6 +42,9 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     func configure(withTask task: Task, delegate: TaskTableViewCellDelegate?) {
+        stripView.backgroundColor = task.category.color
+        categoryContainerView.backgroundColor = task.category.secondaryColor
+        categoryLbl.textColor = task.category.color
         categoryLbl.text = task.category.rawValue
         captionLbl.text = task.caption
         isCompleteImgView.image = task.isComplete ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
