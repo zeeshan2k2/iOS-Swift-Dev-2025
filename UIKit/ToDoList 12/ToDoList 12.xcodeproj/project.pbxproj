@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C11912A02F01E0A500A72817 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119129F2F01E0A500A72817 /* SettingsViewController.swift */; };
 		C16F43F72F009BA0003585D6 /* Assistant-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C16F43E02F009BA0003585D6 /* Assistant-Bold.ttf */; };
 		C16F43F82F009BA0003585D6 /* Assistant-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C16F43E12F009BA0003585D6 /* Assistant-Medium.ttf */; };
 		C16F43F92F009BA0003585D6 /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C16F43E22F009BA0003585D6 /* Assistant-Regular.ttf */; };
@@ -49,6 +50,7 @@
 		C115D2A72E64D64C0042F1F9 /* ToDoList 12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDoList 12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C115D2BD2E64D64D0042F1F9 /* ToDoList 12Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList 12Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C115D2C72E64D64E0042F1F9 /* ToDoList 12UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList 12UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C119129F2F01E0A500A72817 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C16F43E02F009BA0003585D6 /* Assistant-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Bold.ttf"; sourceTree = "<group>"; };
 		C16F43E12F009BA0003585D6 /* Assistant-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Medium.ttf"; sourceTree = "<group>"; };
 		C16F43E22F009BA0003585D6 /* Assistant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Regular.ttf"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				C16F43F22F009BA0003585D6 /* TaskModel.swift */,
 				C16F43F32F009BA0003585D6 /* TaskTableViewCell.swift */,
 				C16F43F42F009BA0003585D6 /* Typography.swift */,
+				C119129F2F01E0A500A72817 /* SettingsViewController.swift */,
 				C16F43F52F009BA0003585D6 /* ViewController.swift */,
 				C16F440A2F009D85003585D6 /* Extension+UIColor.swift */,
 				C16F43E62F009BA0003585D6 /* Assets.xcassets */,
@@ -316,6 +319,7 @@
 			files = (
 				C16F44012F009BA0003585D6 /* AppDelegate.swift in Sources */,
 				C16F440B2F009D85003585D6 /* Extension+UIColor.swift in Sources */,
+				C11912A02F01E0A500A72817 /* SettingsViewController.swift in Sources */,
 				C16F44022F009BA0003585D6 /* CategoryModel.swift in Sources */,
 				C16F44032F009BA0003585D6 /* NewTaskModalView.swift in Sources */,
 				C16F44042F009BA0003585D6 /* NewTaskViewController.swift in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,10 +10,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTaskModalView" customModule="ToDoList_12" customModuleProvider="target">
             <connections>
+                <outlet property="captionLbl" destination="nc5-lC-Ash" id="n7D-85-zxy"/>
+                <outlet property="categoryLbl" destination="Bdz-xp-FY6" id="d7w-zK-dkZ"/>
                 <outlet property="categoryPickerView" destination="Hhf-bU-jRy" id="0bu-Sc-lS5"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="lCR-7h-zZ9"/>
                 <outlet property="descriptionTxtView" destination="9l9-Iy-Oh5" id="7VT-zR-kp9"/>
                 <outlet property="submitBtn" destination="FWo-WD-hc5" id="bR3-u2-R7R"/>
+                <outlet property="titleLbl" destination="k56-Ej-6uE" id="0I3-zB-Of2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,7 +36,7 @@
                         <constraint firstAttribute="width" constant="45" id="4AZ-te-OzK"/>
                         <constraint firstAttribute="height" constant="45" id="LKK-gy-InN"/>
                     </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" systemColor="labelColor"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="xmark" catalog="system"/>
                     <connections>
@@ -85,7 +88,7 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Bdz-xp-FY6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="BbI-np-2hR"/>
                 <constraint firstItem="9l9-Iy-Oh5" firstAttribute="top" secondItem="nc5-lC-Ash" secondAttribute="bottom" constant="10" id="BdC-by-i1g"/>
@@ -115,7 +118,10 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

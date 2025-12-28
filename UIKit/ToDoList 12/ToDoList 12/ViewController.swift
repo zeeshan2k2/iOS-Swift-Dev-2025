@@ -85,6 +85,10 @@ class ViewController: UIViewController {
         let newTaskViewController = NewTaskViewController()
         present(newTaskViewController, animated: true)
     }
+    
+    @IBAction func settingsBtnClicked(_ sender: Any) {
+        performSegue(withIdentifier: "SettingsSegue", sender: nil)
+    }
 }
 
 

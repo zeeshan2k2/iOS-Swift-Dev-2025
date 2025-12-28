@@ -12,6 +12,9 @@ class NewTaskModalView: UIView {
     @IBOutlet private weak var descriptionTxtView: UITextView!
     @IBOutlet private weak var categoryPickerView: UIPickerView!
     @IBOutlet private weak var submitBtn: UIButton!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var captionLbl: UILabel!
+    @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet private var contentView: UIView!
     var delegate: NewTasKDelegate?
     private var task: Task?
@@ -45,7 +48,10 @@ class NewTaskModalView: UIView {
         descriptionTxtView.delegate = self
         categoryPickerView.dataSource = self
         categoryPickerView.delegate = self
-        
+        titleLbl.font = UIFont.style(.h1)
+        captionLbl.font = UIFont.style(.formLabel)
+        categoryLbl.font = UIFont.style(.formLabel)
+        submitBtn.titleLabel?.font = UIFont.style(.buttonTitle)
         descriptionTxtView.layer.borderWidth = 0.5
         descriptionTxtView.layer.borderColor = UIColor.lightGray.cgColor
         descriptionTxtView.layer.cornerRadius = 8
@@ -54,13 +60,13 @@ class NewTaskModalView: UIView {
         
         if let task = task {
             descriptionTxtView.text = task.caption
-            descriptionTxtView.textColor = .black
+            descriptionTxtView.textColor = .label
             if let rowIndex = Category.allCases.firstIndex(of: task.category) {
                 categoryPickerView.selectRow(rowIndex, inComponent: 0, animated: false)
             }
         } else {
             descriptionTxtView.text = "Add caption..."
-            descriptionTxtView.textColor = .lightGray
+            descriptionTxtView.textColor = .placeholderText
             categoryPickerView.selectRow(1, inComponent: 0, animated: false)
         }
         
@@ -113,15 +119,16 @@ class NewTaskModalView: UIView {
 extension NewTaskModalView: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == .lightGray {
+        if textView.textColor == .placeholderText {
             textView.text = nil
-            textView.textColor = .black
+            textView.textColor = .label
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Add caption..."
+            textView.textColor = .placeholderText
         }
     }
 }
