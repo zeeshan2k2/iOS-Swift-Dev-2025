@@ -28,9 +28,25 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func dismissBtnClicked(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     @IBAction func segmentedControlValChanged(_ sender: UISegmentedControl) {
+        // UIAplication: Our entire app is wraped around this
+        // WindowScenes: Responsible for our windows
+        // Windows
+        // KeyWindow
+        // overrideUserInterfaceStyle
+        
+        let window = UIApplication.shared.connectedScenes.flatMap { ($0 as? UIWindowScene)?.windows ?? [] }.first { $0.isKeyWindow }
+        
+        if sender.selectedSegmentIndex == 0 {
+            window?.overrideUserInterfaceStyle = .light
+        } else if sender.selectedSegmentIndex == 1 {
+            window?.overrideUserInterfaceStyle = .dark
+        } else {
+            window?.overrideUserInterfaceStyle = .unspecified
+        }
     }
     
 }
