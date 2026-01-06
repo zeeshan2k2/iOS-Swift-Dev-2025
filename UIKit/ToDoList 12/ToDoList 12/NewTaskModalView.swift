@@ -11,7 +11,7 @@ class NewTaskModalView: UIView {
 
     @IBOutlet private weak var descriptionTxtView: UITextView!
     @IBOutlet private weak var categoryPickerView: UIPickerView!
-    @IBOutlet private weak var submitBtn: UIButton!
+    @IBOutlet private weak var submitBtn: ShadowButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var captionLbl: UILabel!
     @IBOutlet weak var categoryLbl: UILabel!
@@ -51,7 +51,7 @@ class NewTaskModalView: UIView {
         titleLbl.font = UIFont.style(.h1)
         captionLbl.font = UIFont.style(.formLabel)
         categoryLbl.font = UIFont.style(.formLabel)
-        submitBtn.titleLabel?.font = UIFont.style(.buttonTitle)
+//        submitBtn.titleLabel?.font = UIFont.style(.buttonTitle)
         descriptionTxtView.layer.borderWidth = 0.5
         descriptionTxtView.layer.borderColor = UIColor.lightGray.cgColor
         descriptionTxtView.layer.cornerRadius = 8

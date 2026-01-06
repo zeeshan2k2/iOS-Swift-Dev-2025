@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C11912A02F01E0A500A72817 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119129F2F01E0A500A72817 /* SettingsViewController.swift */; };
+		C1622DB22F0C086A00B0792F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB12F0C086A00B0792F /* RoundedButton.swift */; };
+		C1622DB42F0C09E600B0792F /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB32F0C09E600B0792F /* PillButton.swift */; };
+		C1622DB62F0C12E400B0792F /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB52F0C12E400B0792F /* ShadowButton.swift */; };
 		C16F43F72F009BA0003585D6 /* Assistant-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C16F43E02F009BA0003585D6 /* Assistant-Bold.ttf */; };
 		C16F43F82F009BA0003585D6 /* Assistant-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C16F43E12F009BA0003585D6 /* Assistant-Medium.ttf */; };
 		C16F43F92F009BA0003585D6 /* Assistant-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C16F43E22F009BA0003585D6 /* Assistant-Regular.ttf */; };
@@ -51,6 +54,9 @@
 		C115D2BD2E64D64D0042F1F9 /* ToDoList 12Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList 12Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C115D2C72E64D64E0042F1F9 /* ToDoList 12UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList 12UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C119129F2F01E0A500A72817 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C1622DB12F0C086A00B0792F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		C1622DB32F0C09E600B0792F /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
+		C1622DB52F0C12E400B0792F /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		C16F43E02F009BA0003585D6 /* Assistant-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Bold.ttf"; sourceTree = "<group>"; };
 		C16F43E12F009BA0003585D6 /* Assistant-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Medium.ttf"; sourceTree = "<group>"; };
 		C16F43E22F009BA0003585D6 /* Assistant-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Assistant-Regular.ttf"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		C115D29E2E64D64C0042F1F9 = {
 			isa = PBXGroup;
 			children = (
+				C1622DB72F0C14A700B0792F /* Components */,
 				C16F43F62F009BA0003585D6 /* ToDoList 12 */,
 				C115D2C02E64D64D0042F1F9 /* ToDoList 12Tests */,
 				C115D2CA2E64D64E0042F1F9 /* ToDoList 12UITests */,
@@ -129,6 +136,16 @@
 				C115D2C72E64D64E0042F1F9 /* ToDoList 12UITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C1622DB72F0C14A700B0792F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C1622DB12F0C086A00B0792F /* RoundedButton.swift */,
+				C1622DB32F0C09E600B0792F /* PillButton.swift */,
+				C1622DB52F0C12E400B0792F /* ShadowButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C16F43E42F009BA0003585D6 /* Fonts */ = {
@@ -320,10 +337,13 @@
 				C16F44012F009BA0003585D6 /* AppDelegate.swift in Sources */,
 				C16F440B2F009D85003585D6 /* Extension+UIColor.swift in Sources */,
 				C11912A02F01E0A500A72817 /* SettingsViewController.swift in Sources */,
+				C1622DB42F0C09E600B0792F /* PillButton.swift in Sources */,
 				C16F44022F009BA0003585D6 /* CategoryModel.swift in Sources */,
 				C16F44032F009BA0003585D6 /* NewTaskModalView.swift in Sources */,
+				C1622DB62F0C12E400B0792F /* ShadowButton.swift in Sources */,
 				C16F44042F009BA0003585D6 /* NewTaskViewController.swift in Sources */,
 				C16F44052F009BA0003585D6 /* SceneDelegate.swift in Sources */,
+				C1622DB22F0C086A00B0792F /* RoundedButton.swift in Sources */,
 				C16F44062F009BA0003585D6 /* TaskModel.swift in Sources */,
 				C16F44072F009BA0003585D6 /* TaskTableViewCell.swift in Sources */,
 				C16F44082F009BA0003585D6 /* Typography.swift in Sources */,

@@ -15,7 +15,7 @@
                 <outlet property="categoryPickerView" destination="Hhf-bU-jRy" id="0bu-Sc-lS5"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="lCR-7h-zZ9"/>
                 <outlet property="descriptionTxtView" destination="9l9-Iy-Oh5" id="7VT-zR-kp9"/>
-                <outlet property="submitBtn" destination="FWo-WD-hc5" id="bR3-u2-R7R"/>
+                <outlet property="submitBtn" destination="FWo-WD-hc5" id="Q45-lt-eeC"/>
                 <outlet property="titleLbl" destination="k56-Ej-6uE" id="0I3-zB-Of2"/>
             </connections>
         </placeholder>
@@ -71,19 +71,18 @@
                         <constraint firstAttribute="height" constant="90" id="BF6-VR-RzO"/>
                     </constraints>
                 </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-WD-hc5">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-WD-hc5" customClass="RoundedButton" customModule="ToDoList_12" customModuleProvider="target">
                     <rect key="frame" x="25" y="343.33333333333331" width="521" height="40"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="ABS-aM-gTU"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Submit">
-                        <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="15"/>
-                    </buttonConfiguration>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Submit"/>
                     <connections>
-                        <action selector="submitBtnClicked:" destination="-1" eventType="touchUpInside" id="zeR-OY-TCq"/>
+                        <action selector="submitBtnClicked:" destination="-1" eventType="touchUpInside" id="9Kg-uv-Tuj"/>
                     </connections>
                 </button>
             </subviews>
