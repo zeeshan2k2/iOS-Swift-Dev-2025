@@ -18,21 +18,34 @@ class ShadowButton: UIButton {
         }
     }
     
+    @IBInspectable
     var background: UIColor = .link {
         didSet {
             backgroundColor = backgroundColor
         }
     }
     
+    @IBInspectable
     var shadowColor: UIColor = .red {
         didSet {
             layer.shadowColor = shadowColor.cgColor
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
+    }
+    
     override func prepareForInterfaceBuilder() {
+        self.prepareForInterfaceBuilder()
+        setupView()
+    }
+    
+    private func setupView() {
         titleLabel?.font = UIFont.style(.buttonTitle)
         backgroundColor = background
+        layer.shadowColor = shadowColor.cgColor
         layer.masksToBounds = false
         layer.shadowOpacity = 1.0
         layer.shadowRadius = 0
