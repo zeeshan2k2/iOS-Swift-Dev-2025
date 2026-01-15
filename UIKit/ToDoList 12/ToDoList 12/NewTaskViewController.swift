@@ -9,6 +9,7 @@ import UIKit
 
 protocol NewTasKDelegate: AnyObject {
     func closeView()
+    func presentErrorAlert(title: String, message: String)
 }
 
 class NewTaskViewController: UIViewController {
@@ -66,5 +67,12 @@ extension NewTaskViewController: NewTasKDelegate {
     
     func closeView() {
         dismiss(animated: true)
+    }
+    
+    func presentErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
