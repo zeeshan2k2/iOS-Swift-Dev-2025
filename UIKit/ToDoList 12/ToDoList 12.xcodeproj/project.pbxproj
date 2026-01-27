@@ -30,6 +30,7 @@
 		C16F44082F009BA0003585D6 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F43F42F009BA0003585D6 /* Typography.swift */; };
 		C16F44092F009BA0003585D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F43F52F009BA0003585D6 /* ViewController.swift */; };
 		C16F440B2F009D85003585D6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F440A2F009D85003585D6 /* Extension+UIColor.swift */; };
+		C19D9AD12F290547007E0DAB /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19D9AD02F290547007E0DAB /* Animations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C16F43F42F009BA0003585D6 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
 		C16F43F52F009BA0003585D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C16F440A2F009D85003585D6 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		C19D9AD02F290547007E0DAB /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -120,7 +122,6 @@
 		C115D29E2E64D64C0042F1F9 = {
 			isa = PBXGroup;
 			children = (
-				C1622DB72F0C14A700B0792F /* Components */,
 				C16F43F62F009BA0003585D6 /* ToDoList 12 */,
 				C115D2C02E64D64D0042F1F9 /* ToDoList 12Tests */,
 				C115D2CA2E64D64E0042F1F9 /* ToDoList 12UITests */,
@@ -162,26 +163,68 @@
 		C16F43F62F009BA0003585D6 /* ToDoList 12 */ = {
 			isa = PBXGroup;
 			children = (
-				C16F43E42F009BA0003585D6 /* Fonts */,
+				C19D9AD32F290633007E0DAB /* ViewControllers */,
+				C19D9AD22F290615007E0DAB /* Views */,
+				C19D9ACD2F290422007E0DAB /* Models */,
+				C19D9ACF2F290458007E0DAB /* Design */,
+				C1622DB72F0C14A700B0792F /* Components */,
+				C19D9ACE2F290425007E0DAB /* Resources */,
 				C16F43E52F009BA0003585D6 /* AppDelegate.swift */,
-				C16F43E72F009BA0003585D6 /* CategoryModel.swift */,
 				C16F43E92F009BA0003585D6 /* Info.plist */,
 				C16F43EB2F009BA0003585D6 /* LaunchScreen.storyboard */,
 				C16F43ED2F009BA0003585D6 /* Main.storyboard */,
-				C16F43EE2F009BA0003585D6 /* NewTaskModalView.swift */,
-				C16F43EF2F009BA0003585D6 /* NewTaskModalView.xib */,
-				C16F43F02F009BA0003585D6 /* NewTaskViewController.swift */,
 				C16F43F12F009BA0003585D6 /* SceneDelegate.swift */,
-				C16F43F22F009BA0003585D6 /* TaskModel.swift */,
-				C16F43F32F009BA0003585D6 /* TaskTableViewCell.swift */,
-				C16F43F42F009BA0003585D6 /* Typography.swift */,
-				C119129F2F01E0A500A72817 /* SettingsViewController.swift */,
-				C16F43F52F009BA0003585D6 /* ViewController.swift */,
-				C16F440A2F009D85003585D6 /* Extension+UIColor.swift */,
 				C16F43E62F009BA0003585D6 /* Assets.xcassets */,
-				C16F43E82F009BA0003585D6 /* Colors.xcassets */,
 			);
 			path = "ToDoList 12";
+			sourceTree = "<group>";
+		};
+		C19D9ACD2F290422007E0DAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C16F43E72F009BA0003585D6 /* CategoryModel.swift */,
+				C16F43F22F009BA0003585D6 /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C19D9ACE2F290425007E0DAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C16F43E42F009BA0003585D6 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C19D9ACF2F290458007E0DAB /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				C16F43E82F009BA0003585D6 /* Colors.xcassets */,
+				C16F43F42F009BA0003585D6 /* Typography.swift */,
+				C19D9AD02F290547007E0DAB /* Animations.swift */,
+				C16F440A2F009D85003585D6 /* Extension+UIColor.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		C19D9AD22F290615007E0DAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C16F43F32F009BA0003585D6 /* TaskTableViewCell.swift */,
+				C16F43EF2F009BA0003585D6 /* NewTaskModalView.xib */,
+				C16F43EE2F009BA0003585D6 /* NewTaskModalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C19D9AD32F290633007E0DAB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C16F43F52F009BA0003585D6 /* ViewController.swift */,
+				C119129F2F01E0A500A72817 /* SettingsViewController.swift */,
+				C16F43F02F009BA0003585D6 /* NewTaskViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +388,7 @@
 				C16F44052F009BA0003585D6 /* SceneDelegate.swift in Sources */,
 				C1622DB22F0C086A00B0792F /* RoundedButton.swift in Sources */,
 				C16F44062F009BA0003585D6 /* TaskModel.swift in Sources */,
+				C19D9AD12F290547007E0DAB /* Animations.swift in Sources */,
 				C16F44072F009BA0003585D6 /* TaskTableViewCell.swift in Sources */,
 				C16F44082F009BA0003585D6 /* Typography.swift in Sources */,
 				C16F44092F009BA0003585D6 /* ViewController.swift in Sources */,

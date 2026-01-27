@@ -16,6 +16,7 @@ extension UIColor {
         static let secondaryStudy = UIColor(named: "study")!.withAlphaComponent(0.2)
         static let exercise = UIColor(named: "exercise")!
         static let secondaryExercise = UIColor(named: "exercise")!.withAlphaComponent(0.2)
+        static let secondaryLink = UIColor(named: "secondaryLink")!
     }
 }
 
