@@ -114,15 +114,6 @@ class NewTaskModalView: UIView {
     @IBAction func closeBtnClicked(_ sender: Any) {
         delegate?.closeView()
     }
-    
-    func shakeAnimation() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: .linear)
-        animation.duration = 0.4
-        animation.values = [-12, 12, -8, 8, -4, 4, 0]
-        
-        layer.add(animation, forKey: "shake")
-    }
 }
 
 

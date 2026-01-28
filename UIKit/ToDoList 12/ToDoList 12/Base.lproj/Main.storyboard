@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoList_12" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ToDoList_12" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,8 +177,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="EIC-Iw-glJ" id="1fh-ZN-cnn"/>
-                        <outlet property="titleView" destination="1V1-vW-eYL" id="3hY-9p-0xO"/>
+                        <outlet property="settingsBtn" destination="O77-cD-7Pm" id="PZw-jm-xBE"/>
+                        <outlet property="tableView" destination="EIC-Iw-glJ" id="uA5-TE-0ws"/>
+                        <outlet property="titleLbl" destination="kiv-bD-irr" id="Dnm-SZ-Qqg"/>
+                        <outlet property="titleView" destination="1V1-vW-eYL" id="BcA-tt-F2B"/>
                         <segue destination="5LF-9I-7fm" kind="presentation" identifier="SettingsSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="DSG-VG-CtN"/>
                     </connections>
                 </viewController>

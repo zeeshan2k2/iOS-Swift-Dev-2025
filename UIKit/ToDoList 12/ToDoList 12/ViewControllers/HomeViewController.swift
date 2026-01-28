@@ -7,10 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var settingsBtn: UIButton!
+    
+    
     var tasks: [Task] = []
     
     lazy var addButton: UIButton = {
@@ -92,7 +96,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -113,7 +117,7 @@ extension ViewController: UITableViewDataSource {
 }
 
 
-extension ViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let task = tasks[indexPath.row]
@@ -122,7 +126,7 @@ extension ViewController: UITableViewDelegate {
 //    }
 }
 
-extension ViewController: TaskTableViewCellDelegate {
+extension HomeViewController: TaskTableViewCellDelegate {
     
     func editTask(id: String) {
         let task = tasks.first { task in
