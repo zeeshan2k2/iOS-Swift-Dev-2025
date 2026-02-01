@@ -170,11 +170,11 @@
 				C1622DB72F0C14A700B0792F /* Components */,
 				C19D9ACE2F290425007E0DAB /* Resources */,
 				C16F43E52F009BA0003585D6 /* AppDelegate.swift */,
-				C16F43E92F009BA0003585D6 /* Info.plist */,
+				C16F43F12F009BA0003585D6 /* SceneDelegate.swift */,
 				C16F43EB2F009BA0003585D6 /* LaunchScreen.storyboard */,
 				C16F43ED2F009BA0003585D6 /* Main.storyboard */,
-				C16F43F12F009BA0003585D6 /* SceneDelegate.swift */,
 				C16F43E62F009BA0003585D6 /* Assets.xcassets */,
+				C16F43E92F009BA0003585D6 /* Info.plist */,
 			);
 			path = "ToDoList 12";
 			sourceTree = "<group>";
