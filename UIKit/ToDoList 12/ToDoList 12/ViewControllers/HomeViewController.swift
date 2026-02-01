@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os
 
 class HomeViewController: UIViewController {
 
@@ -65,12 +66,14 @@ class HomeViewController: UIViewController {
     }
     
     @objc func createTask(_ notificaiton: Notification) {
+        os_log("Task received by the notification observer", type: .info)
         guard let userInfo = notificaiton.userInfo,
               let task = userInfo["newTask"] as? Task else {
             return
         }
         tasks.append(task)
         tableView.reloadData()
+        os_log("Task successfully created", type: .info)
     }
     
     override func viewDidLayoutSubviews() {

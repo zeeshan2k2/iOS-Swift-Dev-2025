@@ -7,11 +7,25 @@
 
 import UIKit
 
-protocol NewTasKDelegate: AnyObject {
+//TODO: - Move to seperate protocols class
+/**
+ NewTaskDelegate links to the NewTaskViewController and the NewTaskModalView. This helps the NewTaskViewController know when to dismiss when the x button is tapped on the NewTaskModalView and to present an error when a user enters invalid input
+*/
+
+protocol NewTaskDelegate: AnyObject {
+    ///Dismiss the NewTaskViewController: Called when x button is tapped
     func closeView()
+    
+    /**
+    This presents an error alert when the user enters invalid input.
+     - Parameters:
+         - title: This is the title of the error alert
+         - message: A short description of waht went wrong
+     */
     func presentErrorAlert(title: String, message: String)
 }
 
+/// This class is responsible for creating a new task
 class NewTaskViewController: UIViewController {
     
     lazy var modalView: NewTaskModalView = {
@@ -25,6 +39,12 @@ class NewTaskViewController: UIViewController {
     
     private var task: Task?
     
+    /**
+        This creates the NewTaskViewController
+         - Parameters:
+          - task: if a task is being edited, task should be passed, If a new task is being created, task should be nil
+          - Returns: NewTakViewController with a NewTaskModalView for the user to edit or create a task.
+     */
     init(task: Task? = nil) {
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
@@ -63,7 +83,7 @@ class NewTaskViewController: UIViewController {
 
 
 //MARK: - Conformance to New Task Delegation
-extension NewTaskViewController: NewTasKDelegate {
+extension NewTaskViewController: NewTaskDelegate {
     
     func closeView() {
         dismiss(animated: true)

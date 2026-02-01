@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import os
 
 class NewTaskModalView: UIView {
 
@@ -16,7 +17,7 @@ class NewTaskModalView: UIView {
     @IBOutlet weak var captionLbl: UILabel!
     @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet private var contentView: UIView!
-    var delegate: NewTasKDelegate?
+    var delegate: NewTaskDelegate?
     private var task: Task?
     
     var caption: String {
@@ -89,12 +90,14 @@ class NewTaskModalView: UIView {
     
     
     @IBAction func submitBtnClicked(_ sender: Any) {
+        os_log("Task creation has started. Submit button tapped", type: .info)
         guard let caption = descriptionTxtView.text, descriptionTxtView.textColor != UIColor.placeholderText,
             caption.count >= 4 || caption.count <= 50 else {
             delegate?.presentErrorAlert(title: "Caption Error", message: "You need to provide between 4 and 50 characters.")
             shakeAnimation()
             return
         }
+        os_log("Validation of task succeeded", type: .info)
         let selectedRow = categoryPickerView.selectedRow(inComponent: 0)
         let category = Category.allCases[selectedRow]
         if let task = task {
@@ -105,6 +108,7 @@ class NewTaskModalView: UIView {
             let taskId = UUID().uuidString
             let task = Task(id: taskId, category: category, caption: caption, createdDate: Date(), isComplete: false)
             let userInfo: [String: Task] = ["newTask": task]
+            os_log("Task posted as part of notification", type: .info)
             NotificationCenter.default.post(name: NSNotification.Name("com.fullstacktuts.createTask"), object: nil, userInfo: userInfo)
         }
         
