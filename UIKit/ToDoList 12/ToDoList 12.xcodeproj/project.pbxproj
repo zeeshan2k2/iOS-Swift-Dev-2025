@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C11912A02F01E0A500A72817 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119129F2F01E0A500A72817 /* SettingsViewController.swift */; };
+		C1406A092F329D3E00BDA974 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1406A082F329D3E00BDA974 /* RealmSwift */; };
 		C1622DB22F0C086A00B0792F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB12F0C086A00B0792F /* RoundedButton.swift */; };
 		C1622DB42F0C09E600B0792F /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB32F0C09E600B0792F /* PillButton.swift */; };
 		C1622DB62F0C12E400B0792F /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB52F0C12E400B0792F /* ShadowButton.swift */; };
@@ -31,8 +32,6 @@
 		C16F44092F009BA0003585D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F43F52F009BA0003585D6 /* HomeViewController.swift */; };
 		C16F440B2F009D85003585D6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F440A2F009D85003585D6 /* Extension+UIColor.swift */; };
 		C19D9AD12F290547007E0DAB /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19D9AD02F290547007E0DAB /* Animations.swift */; };
-		C1AC67382F2FF85800158E4B /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C1AC67372F2FF85800158E4B /* Realm */; };
-		C1AC673A2F2FF85800158E4B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C1AC67392F2FF85800158E4B /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1AC673A2F2FF85800158E4B /* RealmSwift in Frameworks */,
-				C1AC67382F2FF85800158E4B /* Realm in Frameworks */,
+				C1406A092F329D3E00BDA974 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,8 +246,7 @@
 			);
 			name = "ToDoList 12";
 			packageProductDependencies = (
-				C1AC67372F2FF85800158E4B /* Realm */,
-				C1AC67392F2FF85800158E4B /* RealmSwift */,
+				C1406A082F329D3E00BDA974 /* RealmSwift */,
 			);
 			productName = "ToDoList 12";
 			productReference = C115D2A72E64D64C0042F1F9 /* ToDoList 12.app */;
@@ -334,7 +331,7 @@
 			mainGroup = C115D29E2E64D64C0042F1F9;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				C1AC67362F2FF85800158E4B /* XCRemoteSwiftPackageReference "realm-swift" */,
+				C1406A072F329D3E00BDA974 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C115D2A82E64D64C0042F1F9 /* Products */;
@@ -746,7 +743,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C1AC67362F2FF85800158E4B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		C1406A072F329D3E00BDA974 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
@@ -757,14 +754,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C1AC67372F2FF85800158E4B /* Realm */ = {
+		C1406A082F329D3E00BDA974 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C1AC67362F2FF85800158E4B /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		C1AC67392F2FF85800158E4B /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C1AC67362F2FF85800158E4B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = C1406A072F329D3E00BDA974 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

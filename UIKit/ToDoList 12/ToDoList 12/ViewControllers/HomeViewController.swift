@@ -7,6 +7,7 @@
 
 import UIKit
 import os
+import RealmSwift
 
 class HomeViewController: UIViewController {
 
@@ -14,6 +15,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var settingsBtn: UIButton!
+    
+    let realm = try! Realm()
     
     
     var tasks: [Task] = []
@@ -31,6 +34,19 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupView()
+        setupNotifications()
+        
+        // to read all the tasks
+        let localTasks = realm.objects(LocalTask.self)
+        for localTask in localTasks {
+            let task = Task(id: localTask._id, category: localTask.category, caption: localTask.caption, createdDate: localTask.createdDate, isComplete: localTask.isComplete)
+            tasks.append(task)
+        }
+        tableView.reloadData()
+    }
+    
+    private func setupView() {
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -45,7 +61,9 @@ class HomeViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         
         view.addSubview(addButton)
-        
+    }
+    
+    private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(createTask(_:)), name: NSNotification.Name("com.fullstacktuts.createTask"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editTask(_:)), name: NSNotification.Name("com.fullstacktuts.editTask"), object: nil)
     }
@@ -63,6 +81,23 @@ class HomeViewController: UIViewController {
         }
         tasks[taskIndex] = taskToUpdate
         tableView.reloadData()
+        
+        // updaing a task
+        if let localTasktoEdit = realm.object(ofType: LocalTask.self, forPrimaryKey: taskToUpdate.id) {
+            do {
+                try realm.write {
+                    localTasktoEdit.caption = taskToUpdate.caption
+                    localTasktoEdit.isComplete = taskToUpdate.isComplete
+                    localTasktoEdit.createdDate = taskToUpdate.createdDate
+                    localTasktoEdit.category = taskToUpdate.category
+                    
+                }
+            } catch let error as NSError {
+                let errorText = error.localizedDescription
+                os_log("%@", type: .error, errorText)
+            }
+        }
+        
     }
     
     @objc func createTask(_ notificaiton: Notification) {
@@ -73,6 +108,23 @@ class HomeViewController: UIViewController {
         }
         tasks.append(task)
         tableView.reloadData()
+        
+        // creating a task instance
+        let localTask = LocalTask()
+        localTask._id = task.id
+        localTask.caption = task.caption
+        localTask.createdDate = task.createdDate
+        localTask.isComplete = task.isComplete
+        localTask.category = task.category
+        // saving to RealmDB
+        do {
+            try realm.write {
+                realm.add(localTask)
+            }
+        } catch let error as NSError {
+            let errorText = error.localizedDescription
+            os_log("%@", type: .error, errorText)
+        }
         os_log("Task successfully created", type: .info)
     }
     
@@ -113,6 +165,17 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let taskToDelete = tasks[indexPath.row]
+            if let localTaskToDelete = realm.object(ofType: LocalTask.self, forPrimaryKey: taskToDelete.id) {
+                do {
+                    try realm.write {
+                        realm.delete(localTaskToDelete)
+                    }
+                } catch let error as NSError {
+                    let errorText = error.localizedDescription
+                    os_log("%@", type: .error, errorText)
+                }
+            }
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
