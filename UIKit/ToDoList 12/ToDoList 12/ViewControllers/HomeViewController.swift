@@ -7,6 +7,7 @@
 
 import UIKit
 import os
+import CoreData
 
 class HomeViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var settingsBtn: UIButton!
     
     
-    var tasks: [Task] = []
+    var tasks: [TaskModel] = []
     
     lazy var addButton: UIButton = {
         let button = UIButton()
@@ -48,11 +49,14 @@ class HomeViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(createTask(_:)), name: NSNotification.Name("com.fullstacktuts.createTask"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(editTask(_:)), name: NSNotification.Name("com.fullstacktuts.editTask"), object: nil)
+        
+        fetchTasks()
     }
     
     @objc func editTask(_ notificaiton: Notification) {
+        //FIXME: - Edit task with Core Data
         guard let userInfo = notificaiton.userInfo,
-              let taskToUpdate = userInfo["updateTask"] as? Task else {
+              let taskToUpdate = userInfo["updateTask"] as? TaskModel else {
             return
         }
         let taskIndex = tasks.firstIndex { task in
@@ -68,7 +72,7 @@ class HomeViewController: UIViewController {
     @objc func createTask(_ notificaiton: Notification) {
         os_log("Task received by the notification observer", type: .info)
         guard let userInfo = notificaiton.userInfo,
-              let task = userInfo["newTask"] as? Task else {
+              let task = userInfo["newTask"] as? TaskModel else {
             return
         }
         tasks.append(task)
@@ -96,6 +100,19 @@ class HomeViewController: UIViewController {
     @IBAction func settingsBtnClicked(_ sender: Any) {
         performSegue(withIdentifier: "SettingsSegue", sender: nil)
     }
+    
+    private func fetchTasks() {
+        let context = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+        
+        let request: NSFetchRequest<TaskModel> = TaskModel.fetchRequest()
+        
+        do {
+            tasks = try context.fetch(request)
+            tableView.reloadData()
+        } catch {
+            print("Failed to fetch tasks:", error)
+        }
+    }
 }
 
 
@@ -113,6 +130,13 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let task = tasks[indexPath.row]
+            
+            let context = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+            context.delete(task)
+            
+            AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+            
             tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -131,26 +155,16 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: TaskTableViewCellDelegate {
     
-    func editTask(id: String) {
-        let task = tasks.first { task in
-            task.id == id
-        }
-        guard let task = task else {
-            return
-        }
+    func editTask(task: TaskModel) {
         let newTaskViewController = NewTaskViewController(task: task)
         present(newTaskViewController, animated: true)
-        tableView.reloadData()
     }
     
-    func markTask(id: String, complete: Bool) {
-        let taskIndex = tasks.firstIndex { task in
-            task.id == id
-        }
-        guard let taskIndex = taskIndex else {
-            return
-        }
-        tasks[taskIndex].isComplete = complete
+    func markTask(task: TaskModel) {
+        task.isComplete.toggle()
+        
+        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+        
         tableView.reloadData()
     }
 }

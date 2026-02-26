@@ -37,7 +37,7 @@ class NewTaskViewController: UIViewController {
         return modalView
     }()
     
-    private var task: Task?
+    private var task: TaskModel?
     
     /**
         This creates the NewTaskViewController
@@ -45,7 +45,7 @@ class NewTaskViewController: UIViewController {
           - task: if a task is being edited, task should be passed, If a new task is being created, task should be nil
           - Returns: NewTakViewController with a NewTaskModalView for the user to edit or create a task.
      */
-    init(task: Task? = nil) {
+    init(task: TaskModel? = nil) {
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
         modalPresentationStyle = .overFullScreen
