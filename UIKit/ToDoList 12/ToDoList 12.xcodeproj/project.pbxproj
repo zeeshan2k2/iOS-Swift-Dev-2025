@@ -482,6 +482,8 @@
 				DEVELOPMENT_TEAM = 232C7N3DDY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ToDoList 12/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ToDoList;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -510,6 +512,8 @@
 				DEVELOPMENT_TEAM = 232C7N3DDY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ToDoList 12/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ToDoList;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
