@@ -8,8 +8,8 @@
 import UIKit
 
 protocol TaskTableViewCellDelegate: AnyObject {
-    func editTask(id: String)
-    func markTask(id: String, complete: Bool)
+    func editTask(task: TaskModel)
+    func markTask(task: TaskModel)
 }
 
 class TaskTableViewCell: UITableViewCell {
@@ -25,7 +25,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var stripView: UIView!
     
     private weak var delegate: TaskTableViewCellDelegate?
-    private var task: Task!
+    private var task: TaskModel!
     
     private var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
@@ -41,11 +41,12 @@ class TaskTableViewCell: UITableViewCell {
         
     }
     
-    func configure(withTask task: Task, delegate: TaskTableViewCellDelegate?) {
-        stripView.backgroundColor = task.category.color
-        categoryContainerView.backgroundColor = task.category.secondaryColor
-        categoryLbl.textColor = task.category.color
-        categoryLbl.text = task.category.rawValue
+    func configure(withTask task: TaskModel, delegate: TaskTableViewCellDelegate?) {
+        let taskCategory = Category(rawValue: task.category)!
+        stripView.backgroundColor = taskCategory.color
+        categoryContainerView.backgroundColor = taskCategory.secondaryColor
+        categoryLbl.textColor = taskCategory.color
+        categoryLbl.text = taskCategory.rawValue
         captionLbl.text = task.caption
         isCompleteImgView.image = task.isComplete ? UIImage(systemName: "checkmark.circle") : UIImage(systemName: "circle")
         dateLbl.text = dateFormatter.string(from: task.createdDate)
@@ -59,12 +60,14 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     @objc func toggleCompletiton() {
-        task?.isComplete.toggle()
-        delegate?.markTask(id: task.id, complete: task.isComplete)
+        guard let task = task else { return }
+        delegate?.markTask(task: task)
     }
 
     @IBAction func editTaskBtnClicked(_ sender: Any) {
-        delegate?.editTask(id: task.id)
+        guard let task = task else { return }
+        
+        delegate?.editTask(task: task)
     }
 
 }

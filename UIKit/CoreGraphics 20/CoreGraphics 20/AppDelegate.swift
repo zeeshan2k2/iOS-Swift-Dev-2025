@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ToDoList 12
+//  CoreGraphics 20
 //
-//  Created by Zeeshan Waheed on 01/09/2025.
+//  Created by Zeeshan Waheed on 31/07/2026.
 //
 
 import UIKit
@@ -10,14 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    lazy var coreDataStack = CoreDataStack(modelName: "ToDoList")
-    
-    static let sharedAppDelegate: AppDelegate = {
-        guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
-            fatalError()
-        }
-        return delegate
-    }()
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

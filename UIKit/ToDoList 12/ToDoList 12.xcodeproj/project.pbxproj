@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C11912A02F01E0A500A72817 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C119129F2F01E0A500A72817 /* SettingsViewController.swift */; };
+		C15F71A82F4DCAE9000AC6DE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F71A72F4DCAE9000AC6DE /* CoreDataStack.swift */; };
+		C15F71AB2F4DCBA4000AC6DE /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C15F71A92F4DCBA4000AC6DE /* ToDoList.xcdatamodeld */; };
+		C15F71AE2F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F71AD2F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift */; };
+		C15F71AF2F4DD090000AC6DE /* TaskModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F71AC2F4DD090000AC6DE /* TaskModel+CoreDataClass.swift */; };
+		C15F71B02F4DD090000AC6DE /* TaskModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F71AC2F4DD090000AC6DE /* TaskModel+CoreDataClass.swift */; };
+		C15F71B12F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15F71AD2F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift */; };
 		C1622DB22F0C086A00B0792F /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB12F0C086A00B0792F /* RoundedButton.swift */; };
 		C1622DB42F0C09E600B0792F /* PillButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB32F0C09E600B0792F /* PillButton.swift */; };
 		C1622DB62F0C12E400B0792F /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1622DB52F0C12E400B0792F /* ShadowButton.swift */; };
@@ -55,6 +61,10 @@
 		C115D2BD2E64D64D0042F1F9 /* ToDoList 12Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList 12Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C115D2C72E64D64E0042F1F9 /* ToDoList 12UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDoList 12UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C119129F2F01E0A500A72817 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C15F71A72F4DCAE9000AC6DE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		C15F71AA2F4DCBA4000AC6DE /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
+		C15F71AC2F4DD090000AC6DE /* TaskModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C15F71AD2F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C1622DB12F0C086A00B0792F /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		C1622DB32F0C09E600B0792F /* PillButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillButton.swift; sourceTree = "<group>"; };
 		C1622DB52F0C12E400B0792F /* ShadowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
@@ -139,6 +149,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C15F71A62F4DCAD2000AC6DE /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C15F71A72F4DCAE9000AC6DE /* CoreDataStack.swift */,
+				C15F71AC2F4DD090000AC6DE /* TaskModel+CoreDataClass.swift */,
+				C15F71AD2F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift */,
+				C15F71A92F4DCBA4000AC6DE /* ToDoList.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		C1622DB72F0C14A700B0792F /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +184,7 @@
 		C16F43F62F009BA0003585D6 /* ToDoList 12 */ = {
 			isa = PBXGroup;
 			children = (
+				C15F71A62F4DCAD2000AC6DE /* CoreData */,
 				C19D9AD32F290633007E0DAB /* ViewControllers */,
 				C19D9AD22F290615007E0DAB /* Views */,
 				C19D9ACD2F290422007E0DAB /* Models */,
@@ -383,12 +405,16 @@
 				C1622DB42F0C09E600B0792F /* PillButton.swift in Sources */,
 				C16F44022F009BA0003585D6 /* CategoryModel.swift in Sources */,
 				C16F44032F009BA0003585D6 /* NewTaskModalView.swift in Sources */,
+				C15F71B02F4DD090000AC6DE /* TaskModel+CoreDataClass.swift in Sources */,
+				C15F71B12F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift in Sources */,
 				C1622DB62F0C12E400B0792F /* ShadowButton.swift in Sources */,
+				C15F71A82F4DCAE9000AC6DE /* CoreDataStack.swift in Sources */,
 				C16F44042F009BA0003585D6 /* NewTaskViewController.swift in Sources */,
 				C16F44052F009BA0003585D6 /* SceneDelegate.swift in Sources */,
 				C1622DB22F0C086A00B0792F /* RoundedButton.swift in Sources */,
 				C16F44062F009BA0003585D6 /* TaskModel.swift in Sources */,
 				C19D9AD12F290547007E0DAB /* Animations.swift in Sources */,
+				C15F71AB2F4DCBA4000AC6DE /* ToDoList.xcdatamodeld in Sources */,
 				C16F44072F009BA0003585D6 /* TaskTableViewCell.swift in Sources */,
 				C16F44082F009BA0003585D6 /* Typography.swift in Sources */,
 				C16F44092F009BA0003585D6 /* HomeViewController.swift in Sources */,
@@ -399,6 +425,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15F71AE2F4DD090000AC6DE /* TaskModel+CoreDataProperties.swift in Sources */,
+				C15F71AF2F4DD090000AC6DE /* TaskModel+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +482,8 @@
 				DEVELOPMENT_TEAM = 232C7N3DDY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ToDoList 12/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ToDoList;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -482,6 +512,8 @@
 				DEVELOPMENT_TEAM = 232C7N3DDY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "ToDoList 12/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ToDoList;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -735,6 +767,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C15F71A92F4DCBA4000AC6DE /* ToDoList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C15F71AA2F4DCBA4000AC6DE /* ToDoList.xcdatamodel */,
+			);
+			currentVersion = C15F71AA2F4DCBA4000AC6DE /* ToDoList.xcdatamodel */;
+			path = ToDoList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C115D29F2E64D64C0042F1F9 /* Project object */;
 }
